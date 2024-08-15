@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="js quiz.css">
+    <title>JS Quiz</title>
+    <link rel="stylesheet" href="quiz.css"/>
+  </head>
+  <body>
+    <nav>
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="que.html">Quantative</a></li>
+          <li><a href="ver.html">Verbal</a></li>
+          <li><a href="rea.html">Reaoning</a></li>
+      </ul>
+  </nav>
+    <h1 id="main-h">Deductive</h1>
+    <h2 id="questions-h"></h2>
+    <p class="questions" id="question1">
+    
+      1- All crows are black. All black birds are loud. All crows are birds.<br>Statement: All crows are loud.</p>
+    <input type="radio" name="answer1" value="wrong">Insufficient information
+    <input type="radio" name="answer1" value="correct">True
+    <input type="radio" name="answer1" value="wrong">False
+    <hr>
+
+    <p class="questions" id="question2">
+      2- Mike finished ahead of Paul. Paul and Brian both finished before Liam. Owen did not finish last.
+      Who was the last to finish?</p>
+    <input type="radio" name="answer2" value="wrong">paul
+    <input type="radio" name="answer2" value="wrong">owen
+    <input type="radio" name="answer2" value="correct">liam
+    <hr>
+
+    <p class="questions" id="question3">
+      3- 1. Vehicles are either to the right or left of other vehicles.<br>
+         2. Only Dutch vehicles are next to the German car.<br>
+         3. The bus is two times bigger than the German car.<br>
+         4. The Dutch bicycle is placed next to the Swedish truck.<br>
+         5. The motorcycle has the same country of origin as the vehicles next to the German car.<br>
+         6. The motorcycle is half the size of the German car.<br>
+    <b>Statement: The motorcycle is Dutch</b></p>
+      <input type="radio" name="answer3" value="wrong">Insufficient information
+      <input type="radio" name="answer3" value="wrong">false
+      <input type="radio" name="answer3" value="correct">true
+      <hr>
+    <p class="questions" id="question4">
+    
+      4- (Continue with information from question 3.)<br>
+
+      <b>Statement: The motorcycle is eight times smaller than the bus</b></p>
+    <input type="radio" name="answer4" value="wrong"> true
+    <input type="radio" name="answer4" value="correct">false
+    <input type="radio" name="answer4" value="wrong"> Insufficient information
+    <hr>
+
+    <p class="questions" id="question5">
+      5- (Continue with information from question 3.)<br>
+
+      <b>Statement: The bicycle is half the size of the motorcycle</b></p>
+    <input type="radio" name="answer5" value="wrong">true
+    <input type="radio" name="answer5" value="wrong"> false
+    <input type="radio" name="answer5" value="correct">Insufficient information
+    <hr>
+
+    <p class="questions" id="question6">
+      6- An art shop sells art supplies:<br>
+
+      A tube of paint costs $1.50<br>
+      A tube of paint covers 2 square feet of canvas<br>
+      Canvasses are sold small or large: 1 feet by 1,5 feet or 2 feet by 3 feet.<br>
+      The difference in cost of the two canvasses are relative to their size.<br>
+      A beginners package discount consisting of one small canvas, one large canvas and four tubes of paint costs $22.<br>
+      A beginners package discount is $4 cheaper than buying the art supplies separately.<br>
+      Paint is not discounted in a beginners package.<br>
+    <b>Statement: Both canvasses can be painted with a beginners package</b></p>
+      <input type="radio" name="answer6" value="wrong">Insufficient information
+      <input type="radio" name="answer6" value="wrong">false
+      <input type="radio" name="answer6" value="correct">true
+      <hr>
+
+      <p class="questions" id="question7">
+        7- (Continue with information from question 6.)<br>
+
+        <b>Statement: Total tubes of paint are sold more through beginners packages than through separate sales.</b></p>
+        <input type="radio" name="answer7" value="wrong">true
+        <input type="radio" name="answer7" value="correct">false
+        <input type="radio" name="answer7" value="wrong">Insufficient information
+        <hr>
+
+        <p class="questions" id="question8">
+          8- (Continue with information from question 6.)<br>
+        <b>Statement: The cost of a separate large canvas is $14</b></p>
+          <input type="radio" name="answer8" value="correct">true
+          <input type="radio" name="answer8" value="wrong">false
+          <input type="radio" name="answer8" value="wrong">Insufficient information
+          <hr>
+
+      <br>
+      <br>
+  
+      <button class="submit" onclick="return getResults();" type="submit">
+        submit</button>
+  
+    <h2 id="results-h">Get Result</h2>
+    <p id="results"></p>
+  
+    <script type="text/javascript">
+      function getResults() {
+
+var amountCorrect = 0;
+
+for(var i = 1; i <= 10; i++) {
+  var radiosName = document.getElementsByName('answer'+i);
+
+  for(var j = 0; j < radiosName.length; j++) {
+    var radiosValue = radiosName[j];
+    if(radiosValue.value == "correct" && radiosValue.checked) {
+      amountCorrect++;
+      radiosValue.style.color = "green";
+    }
+  }
+}
+document.getElementById('results').innerHTML =
+"your result  " + amountCorrect;
+
+}
+    </script>
+   </body>
+  </html>

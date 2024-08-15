@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="js quiz.css">
+    <title>JS Quiz</title>
+    <link rel="stylesheet" href="quiz.css"/>
+  </head>
+  <body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="que.html">Quantative</a></li>
+            <li><a href="ver.html">Verbal</a></li>
+            <li><a href="rea.html">Reaoning</a></li>
+        </ul>
+    </nav>
+    <h1 id="main-h">Time and Work</h1>
+    <h2 id="questions-h"></h2>
+    <p class="questions" id="question1">
+    1-A can do a work in 15 days and B in 20 days. If they work on it together for 4 days, then the fraction of the work that is left is? </p>
+    <input type="radio" name="answer1" value="wrong">7/15
+    <input type="radio" name="answer1" value="correct">8/15
+    <input type="radio" name="answer1" value="wrong">1/4
+    <hr>
+    <p class="questions" id="question2">
+    2-A can lay railway track between two given stations in 16 days and B can do the same job in 12 days. With help of C, they did the job in 4 days only. Then, C alone can do the job in? </p>
+    <input type="radio" name="answer2" value="correct">9 3/5
+    <input type="radio" name="answer2" value="wrong">9 2/5
+    <input type="radio" name="answer2" value="wrong">9 1/5
+    <hr>
+   <p class="questions" id="question3">
+    3- A, B and C can do a piece of work in 20, 30 and 60 days respectively. In how many days can A do the work if he is assisted by B and C on every third day?</p>
+      <input type="radio" name="answer3" value="wrong">18days
+      <input type="radio" name="answer3" value="wrong">16days
+      <input type="radio" name="answer3" value="correct">15days
+      <hr>
+      <p class="questions" id="question4">
+     4-A is thrice as good as workman as B and therefore is able to finish a job in 60 days less than B. Working together, they can do it in?</p>
+      <input type="radio" name="answer4" value="correct">22 1/2days
+      <input type="radio" name="answer4" value="wrong">25days
+      <input type="radio" name="answer4" value="wrong">28days
+      <hr>
+    <p class="questions" id="question5">
+     5-A alone can do a piece of work in 6 days and B alone in 8 days. A and B undertook to do it for Rs. 3200. With the help of C, they completed the work in 3 days. How much is to be paid to C?</p>
+      <input type="radio" name="answer5" value="wrong">Rs.600
+      <input type="radio" name="answer5" value="wrong">Rs.800
+      <input type="radio" name="answer5" value="correct">Rs.400
+      <hr>
+    <p class="questions" id="question6">
+     6-If 6 men and 8 boys can do a piece of work in 10 days while 26 men and 48 boys can do the same in 2 days, the time taken by 15 men and 20 boys in doing the same type of work will be</p>
+      <input type="radio" name="answer6" value="wrong">5days
+      <input type="radio" name="answer6" value="correct">4days
+      <input type="radio" name="answer6" value="wrong">6days
+      <hr>
+    <p class="questions" id="question7">
+      7-A can do a piece of work in 4 hours; B and C together can do it in 3 hours, while A and C together can do it in 2 hours. How long will B alone take to do it?</p>
+      <input type="radio" name="answer7" value="correct">12 hours
+      <input type="radio" name="answer7" value="wrong">24 hours
+      <input type="radio" name="answer7" value="wrong">10 hours
+      <hr>
+    <p class="questions" id="question8">
+      8-A can do a certain work in the same time in which B and C together can do it. If A and B together could do it in 10 days and C alone in 50 days, then B alone could do it in?</p>
+      <input type="radio" name="answer8" value="wrong">30 days
+      <input type="radio" name="answer8" value="wrong">28 days
+      <input type="radio" name="answer8" value="correct">25 days
+      <hr>
+    <p class="questions" id="question9">
+      9-A does 80% of a work in 20 days. He then calls in B and they together finish the remaining work in 3 days. How long B alone would take to do the whole work?</p>
+      <input type="radio" name="answer9" value="correct">371/2
+      <input type="radio" name="answer9" value="wrong">40
+      <input type="radio" name="answer9" value="wrong">33
+      <hr>
+    <p class="questions" id="question10">
+      10-A and B can together finish a work 30 days. They worked together for 20 days and then B left. After another 20 days, A finished the remaining work. In how many days A alone can finish the work?</p>
+      <input type="radio" name="answer10" value="wrong">50
+      <input type="radio" name="answer10" value="wrong">40
+      <input type="radio" name="answer10" value="correct">60
+      <hr>
+     <br>
+     <br>
+     <button class="submit" onclick="return getResults();" type="submit">
+        submit</button>
+     <h2 id="results-h">Get Result</h2>
+    <p id="results"></p>
+   <script type="text/javascript">
+      function getResults() {
+  var amountCorrect = 0;
+for(var i = 1; i <= 10; i++) {
+  var radiosName = document.getElementsByName('answer'+i);
+
+  for(var j = 0; j < radiosName.length; j++) {
+    var radiosValue = radiosName[j];
+    if(radiosValue.value == "correct" && radiosValue.checked) {
+      amountCorrect++;
+      radiosValue.style.color = "green";
+    }
+  }
+}
+document.getElementById('results').innerHTML =
+"your result  " + amountCorrect;
+
+}
+    </script>
+   </body>
+  </html>

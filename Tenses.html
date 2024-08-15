@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="js quiz.css">
+    <title>JS Quiz</title>
+    <link rel="stylesheet" href="quiz.css"/>
+  </head>
+  <body>
+    <nav>
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="que.html">Quantative</a></li>
+          <li><a href="ver.html">Verbal</a></li>
+          <li><a href="rea.html">Reaoning</a></li>
+      </ul>
+  </nav>
+    <h1 id="main-h">Tenses</h1>
+    <h2 id="questions-h"></h2>
+    <p class="questions" id="question1">
+    
+      1-  When you phoned, I ……………….. a shower.</p>
+    <input type="radio" name="answer1" value="wrong">am having
+    <input type="radio" name="answer1" value="correct">was having
+    <input type="radio" name="answer1" value="wrong">has been having
+    <hr>
+
+    <p class="questions" id="question2">
+      2- If you had arrived late, I ………………….. angry.</p>
+    <input type="radio" name="answer2" value="wrong">should have been
+    <input type="radio" name="answer2" value="wrong">could have been
+    <input type="radio" name="answer2" value="correct">would have been
+    <hr>
+
+    <p class="questions" id="question3">
+      3- They ………………….. the French course yet.</p>
+      <input type="radio" name="answer3" value="wrong">had not started
+      <input type="radio" name="answer3" value="wrong">have not start
+      <input type="radio" name="answer3" value="correct">have not started
+      <hr>
+    <p class="questions" id="question4">
+    
+      4- My family ………………….. in Australia for a year when I was a child.</p>
+    <input type="radio" name="answer4" value="wrong">living
+    <input type="radio" name="answer4" value="correct">lived
+    <input type="radio" name="answer4" value="wrong">lives
+    <hr>
+
+    <p class="questions" id="question5">
+      5- Most major cities ...................... significantly over the last 30 years.</p>
+    <input type="radio" name="answer5" value="wrong">will grow
+    <input type="radio" name="answer5" value="wrong">grew
+    <input type="radio" name="answer5" value="correct">have grown
+
+    <hr>
+
+    <p class="questions" id="question6">
+      6- Mick usually ………………….. his dog in the afternoon.</p>
+      <input type="radio" name="answer6" value="wrong">is walking
+      <input type="radio" name="answer6" value="wrong"> walk
+      <input type="radio" name="answer6" value="correct">walks
+      <hr>
+
+      <p class="questions" id="question7">
+        7-  I’m tired. I ………………….. for 3 hours!</p>
+        <input type="radio" name="answer7" value="wrong"> have studied
+        <input type="radio" name="answer7" value="correct"> have been studying
+        <input type="radio" name="answer7" value="wrong"> had been studying
+        <hr>
+
+        <p class="questions" id="question8">
+          8- This time next year I ………………….. in London for 7 years.</p>
+          <input type="radio" name="answer8" value="correct">will have been living
+          <input type="radio" name="answer8" value="wrong"> will have lived
+          <input type="radio" name="answer8" value="wrong">will be living
+          <hr>
+
+            <p class="questions" id="question9">
+              9- They will read the report fully before they …………………..</p>
+              <input type="radio" name="answer9" value="wrong">will vote
+              <input type="radio" name="answer9" value="wrong"> would vote
+              <input type="radio" name="answer9" value="correct"> vote
+              <hr>
+
+              <p class="questions" id="question10">
+                10- While I was reading, the phone …………………..</p>
+                <input type="radio" name="answer10" value="correct"> rang
+                <input type="radio" name="answer10" value="wrong"> was ringing
+                <input type="radio" name="answer10" value="wrong"> rung
+
+                <hr>
+
+      <br>
+      <br>
+  
+      <button class="submit" onclick="return getResults();" type="submit">
+        submit</button>
+  
+    <h2 id="results-h">Get Result</h2>
+    <p id="results"></p>
+  
+    <script type="text/javascript">
+      function getResults() {
+
+var amountCorrect = 0;
+
+for(var i = 1; i <= 10; i++) {
+  var radiosName = document.getElementsByName('answer'+i);
+
+  for(var j = 0; j < radiosName.length; j++) {
+    var radiosValue = radiosName[j];
+    if(radiosValue.value == "correct" && radiosValue.checked) {
+      amountCorrect++;
+      radiosValue.style.color = "green";
+    }
+  }
+}
+document.getElementById('results').innerHTML =
+"your result  " + amountCorrect;
+
+}
+    </script>
+   </body>
+  </html>

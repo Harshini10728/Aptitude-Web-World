@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="js quiz.css">
+    <title>JS Quiz</title>
+    <link rel="stylesheet" href="quiz.css"/>
+  </head>
+  <body>
+    <nav>
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="que.html">Quantative</a></li>
+          <li><a href="ver.html">Verbal</a></li>
+          <li><a href="rea.html">Reaoning</a></li>
+      </ul>
+  </nav>
+    <h1 id="main-h">Part of Speech</h1>
+    <h2 id="questions-h"></h2>
+    <p class="questions" id="question1">
+    
+      1- I bought a beautiful dress at the mall.</p>
+    <input type="radio" name="answer1" value="wrong">preposition
+    <input type="radio" name="answer1" value="correct">adjective
+    <input type="radio" name="answer1" value="wrong">noun
+    <hr>
+
+    <p class="questions" id="question2">
+      2- What did she ask you to do?</p>
+    <input type="radio" name="answer2" value="wrong">conjunction
+    <input type="radio" name="answer2" value="wrong">preposition
+    <input type="radio" name="answer2" value="correct">pronoun
+    <hr>
+
+    <p class="questions" id="question3">
+      3- I left my shoes under the kitchen table.</p>
+      <input type="radio" name="answer3" value="wrong">adjective
+      <input type="radio" name="answer3" value="wrong">pronoun
+      <input type="radio" name="answer3" value="correct">preposition
+      <hr>
+    <p class="questions" id="question4">
+    
+      4- If we finish our work quickly we can go to the movies.</p>
+    <input type="radio" name="answer4" value="wrong">conjunction
+    <input type="radio" name="answer4" value="correct">adverb
+    <input type="radio" name="answer4" value="wrong">verb
+    <hr>
+
+    <p class="questions" id="question5">
+      5- On Saturdays I work from nine to five.</p>
+    <input type="radio" name="answer5" value="wrong">pronoun
+    <input type="radio" name="answer5" value="wrong">preposition
+    <input type="radio" name="answer5" value="correct">verb
+    <hr>
+
+    <p class="questions" id="question6">
+      6- I want to go to a university in the United States.</p>
+      <input type="radio" name="answer6" value="wrong">adjective
+      <input type="radio" name="answer6" value="wrong">preposition
+      <input type="radio" name="answer6" value="correct">noun
+      <hr>
+
+      <p class="questions" id="question7">
+        7- I'm sure I've met your girlfriend before.</p>
+        <input type="radio" name="answer7" value="wrong"> preposition
+        <input type="radio" name="answer7" value="correct"> verb
+        <input type="radio" name="answer7" value="wrong"> interjection
+        <hr>
+
+        <p class="questions" id="question8">
+          8- Well, I don't think I'll be home before 6.</p>
+          <input type="radio" name="answer8" value="correct">  interjection
+          <input type="radio" name="answer8" value="wrong"> preposition
+          <input type="radio" name="answer8" value="wrong"> pronoun
+          <hr>
+
+            <p class="questions" id="question9">
+              9- Andy knocked on the door but nobody answered.</p>
+              <input type="radio" name="answer9" value="wrong"> adverb
+              <input type="radio" name="answer9" value="wrong">  adjective
+              <input type="radio" name="answer9" value="correct"> conjunction
+              <hr>
+
+              <p class="questions" id="question10">
+                10- After lunch let's go out for a coffee.</p>
+                <input type="radio" name="answer10" value="correct"> preposition
+                <input type="radio" name="answer10" value="wrong">verb
+                <input type="radio" name="answer10" value="wrong"> pronoun
+                <hr>
+
+      <br>
+      <br>
+  
+      <button class="submit" onclick="return getResults();" type="submit">
+        submit</button>
+  
+    <h2 id="results-h">Get Result</h2>
+    <p id="results"></p>
+  
+    <script type="text/javascript">
+      function getResults() {
+
+var amountCorrect = 0;
+
+for(var i = 1; i <= 10; i++) {
+  var radiosName = document.getElementsByName('answer'+i);
+
+  for(var j = 0; j < radiosName.length; j++) {
+    var radiosValue = radiosName[j];
+    if(radiosValue.value == "correct" && radiosValue.checked) {
+      amountCorrect++;
+      radiosValue.style.color = "green";
+    }
+  }
+}
+document.getElementById('results').innerHTML =
+"your result  " + amountCorrect;
+
+}
+    </script>
+   </body>
+  </html>

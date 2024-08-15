@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="js quiz.css">
+    <title>JS Quiz</title>
+    <link rel="stylesheet" href="quiz.css"/>
+  </head>
+  <body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="que.html">Quantative</a></li>
+            <li><a href="ver.html">Verbal</a></li>
+            <li><a href="rea.html">Reaoning</a></li>
+        </ul>
+    </nav>
+    <h1 id="main-h">Problems on Ages</h1>
+    <h2 id="questions-h"></h2>
+    <p class="questions" id="question1">
+    
+      1- A is two years older than B who is twice as old as C. If the total of the ages of A, B and C be 27, then how old is B?</p>
+    <input type="radio" name="answer1" value="wrong">8
+    <input type="radio" name="answer1" value="correct">10
+    <input type="radio" name="answer1" value="wrong">13
+    <hr>
+
+    <p class="questions" id="question2">
+      2- A father said to his son, "I was as old as you are at the present at the time of your birth". If the father's age is 38 years now, the son's age five years back was</p>
+    <input type="radio" name="answer2" value="correct">14
+    <input type="radio" name="answer2" value="wrong">19
+    <input type="radio" name="answer2" value="wrong">33
+    <hr>
+   <p class="questions" id="question3">
+      3-At present father's age is thrice of son's age. After 15 years father's age will be double of son's age. What is son's present age?</p>
+      <input type="radio" name="answer3" value="wrong">16
+      <input type="radio" name="answer3" value="wrong">10
+      <input type="radio" name="answer3" value="correct">15
+      <hr>
+      <p class="questions" id="question4">
+      4- Sam is 16 years older than Peter. If 6 years back, Sam\'s age was 3 times Peter\'s age, what are their present ages?</p>
+      <input type="radio" name="answer4" value="correct">14 and 30years
+      <input type="radio" name="answer4" value="wrong">15 and 31years
+      <input type="radio" name="answer4" value="wrong">13 and 33 years
+      <hr>
+    <p class="questions" id="question5">
+      5- Cooper\'s present age is 3 years more than thrice Max\'s present age. After 3 years, Cooper\'s age will 10 years more than twice Max\'s age. What is Cooper\'s present age?</p>
+      <input type="radio" name="answer5" value="wrong">38yrs
+      <input type="radio" name="answer5" value="wrong">35yrs
+      <input type="radio" name="answer5" value="correct">33yrs
+      <hr>
+    <p class="questions" id="question6">
+      6- The age of a father was 4 times his son's age 8 years back. After 8 years, the father will be twice as old as his son. Find out the present ages of father and son.</p>
+      <input type="radio" name="answer6" value="wrong">14and45years
+      <input type="radio" name="answer6" value="correct">16and40years
+      <input type="radio" name="answer6" value="wrong">12and42years
+      <hr>
+    <p class="questions" id="question7">
+      7- A boy is older than girl by 7 years. If the ratio of ages of boy:girl is 9:7, what is the age of boy?</p>
+      <input type="radio" name="answer7" value="correct">31.5years
+      <input type="radio" name="answer7" value="wrong">19.5years
+      <input type="radio" name="answer7" value="wrong">25.5years
+      <hr>
+    <p class="questions" id="question8">
+      8- 6:7 is the ratio of Michael\'s and Rosan's ages one year back. The ratio will become 7:8 in four years. Calculate the present age of Rosan.</p>
+      <input type="radio" name="answer8" value="wrong">35
+      <input type="radio" name="answer8" value="wrong">34
+      <input type="radio" name="answer8" value="correct">36
+      <hr>
+    <p class="questions" id="question9">
+      9- The present ages of Ram and Shyam are in the ratio 6:7. If Shyam is 4 years older than Ram, after 4 years what will be the ratio of their ages?</p>
+      <input type="radio" name="answer9" value="correct">7:8
+      <input type="radio" name="answer9" value="wrong">8:7
+      <input type="radio" name="answer9" value="wrong">4:8
+      <hr>
+    <p class="questions" id="question10">
+      10- After 15 years, Paul's age will be 5 times his age 5 years back. Find out his present age.</p>
+      <input type="radio" name="answer10" value="wrong">14
+      <input type="radio" name="answer10" value="wrong">19
+      <input type="radio" name="answer10" value="correct">10
+      <hr>
+     <br>
+     <br>
+  
+      <button class="submit" onclick="return getResults();" type="submit">
+        submit</button>
+  
+    <h2 id="results-h">Get Result</h2>
+    <p id="results"></p>
+  
+    <script type="text/javascript">
+      function getResults() {
+
+var amountCorrect = 0;
+
+for(var i = 1; i <= 10; i++) {
+  var radiosName = document.getElementsByName('answer'+i);
+
+  for(var j = 0; j < radiosName.length; j++) {
+    var radiosValue = radiosName[j];
+    if(radiosValue.value == "correct" && radiosValue.checked) {
+      amountCorrect++;
+      radiosValue.style.color = "green";
+    }
+  }
+}
+document.getElementById('results').innerHTML =
+"your result  " + amountCorrect;
+
+}
+    </script>
+   </body>
+  </html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="js quiz.css">
+    <title>JS Quiz</title>
+    <link rel="stylesheet" href="quiz.css"/>
+  </head>
+  <body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="que.html">Quantative</a></li>
+            <li><a href="ver.html">Verbal</a></li>
+            <li><a href="rea.html">Reaoning</a></li>
+        </ul>
+    </nav>
+    <h1 id="main-h">Partnership</h1>
+    <h2 id="questions-h"></h2>
+    <p class="questions" id="question1">
+      1- A and B invest in a business in the ratio 3 : 2. If 5% of the total profit goes to charity and A's share is Rs. 855, the total profit is?</p>
+    <input type="radio" name="answer1" value="wrong">Rs.1425
+    <input type="radio" name="answer1" value="correct">Rs.1500
+    <input type="radio" name="answer1" value="wrong">Rs.1537.50
+    <hr>
+
+    <p class="questions" id="question2">
+      2- A, B and C enter into a partnership in the ratio  :  : . After 4 months, A increases his share 50%. If the total profit at the end of one year be Rs. 21,600, then B's share in the profit is?</p>
+    <input type="radio" name="answer2" value="correct">Rs.4000
+    <input type="radio" name="answer2" value="wrong">Rs.4200
+    <input type="radio" name="answer2" value="wrong">Rs.5000
+    <hr>
+   <p class="questions" id="question3">
+      3-
+      A, B, C subscribe Rs. 50,000 for a business. A subscribes Rs. 4000 more than B and B Rs. 5000 more than C. Out of a total profit of Rs. 35,000, A receives?</p>
+      <input type="radio" name="answer3" value="wrong">Rs.13,300
+      <input type="radio" name="answer3" value="wrong">Rs.15,000
+      <input type="radio" name="answer3" value="correct">Rs.14,700
+      <hr>
+      <p class="questions" id="question4">
+      4-Three partners shared the profit in a business in the ratio 5 : 7 : 8. They had partnered for 14 months, 8 months and 7 months respectively. What was the ratio of their investments?</p>
+      <input type="radio" name="answer4" value="correct">20 : 49 : 64
+      <input type="radio" name="answer4" value="wrong">38 : 28 : 21
+      <input type="radio" name="answer4" value="wrong">None of these
+      <hr>
+    <p class="questions" id="question5">
+      5- A starts business with Rs. 3500 and after 5 months, B joins with A as his partner. After a year, the profit is divided in the ratio 2 : 3. What is B's contribution in the capital?</p>
+      <input type="radio" name="answer5" value="wrong">Rs.8500
+      <input type="radio" name="answer5" value="wrong">Rs.8000
+      <input type="radio" name="answer5" value="correct">Rs.9000
+      <hr>
+    <p class="questions" id="question6">
+      6- A and B entered into partnership with capitals in the ratio 4 : 5. After 3 months, A withdrew  of his capital and B withdrew  of his capital. The gain at the end of 10 months was Rs. 760. A's share in this profit is?</p>
+      <input type="radio" name="answer6" value="wrong">Rs.390
+      <input type="radio" name="answer6" value="correct">Rs.330
+      <input type="radio" name="answer6" value="wrong">Rs.430
+      <hr>
+    <p class="questions" id="question7">
+      7- Simran started a software business by investing Rs. 50,000. After six months, Nanda joined her with a capital of Rs. 80,000. After 3 years, they earned a profit of Rs. 24,500. What was Simran's share in the profit?
+    </p>
+      <input type="radio" name="answer7" value="correct">Rs.10,500
+      <input type="radio" name="answer7" value="wrong">Rs.10,250
+      <input type="radio" name="answer7" value="wrong">Rs.12,500
+      <hr>
+    <p class="questions" id="question8">
+      8- Two friends A and B started a business by investing Rs.1500 and Rs. 7500 respectively. After 1 year find the ratio of their profits?</p>
+      <input type="radio" name="answer8" value="wrong">1:4
+      <input type="radio" name="answer8" value="wrong">2:7
+      <input type="radio" name="answer8" value="correct">1:5
+      <hr>
+    <p class="questions" id="question9">
+      9- A and B two friends started a business jointly. The investment of B is equal to 1/3 times the investment of A. Find the profit share of B in the annual profit of 32000?</p>
+      <input type="radio" name="answer9" value="correct">8000
+      <input type="radio" name="answer9" value="wrong">7000
+      <input type="radio" name="answer9" value="wrong">9000
+      <hr>
+    <p class="questions" id="question10">
+      10- P, Q and R three partners start a business with an investment of ₹ 50000 each. P withdraw his capital after 9 months, Q after 6 months and R remains in partnership for 12 months. Find the ratio of their profits?</p>
+      <input type="radio" name="answer10" value="wrong">2:1:4
+      <input type="radio" name="answer10" value="wrong">3:2:5
+      <input type="radio" name="answer10" value="correct">3:2:4
+      <hr>
+     <br>
+     <br>
+  <button class="submit" onclick="return getResults();" type="submit">
+        submit</button>
+     <h2 id="results-h">Get Result</h2>
+    <p id="results"></p>
+     <script type="text/javascript">
+      function getResults() {
+
+var amountCorrect = 0;
+
+for(var i = 1; i <= 10; i++) {
+  var radiosName = document.getElementsByName('answer'+i);
+
+  for(var j = 0; j < radiosName.length; j++) {
+    var radiosValue = radiosName[j];
+    if(radiosValue.value == "correct" && radiosValue.checked) {
+      amountCorrect++;
+      radiosValue.style.color = "green";
+    }
+  }
+}
+document.getElementById('results').innerHTML =
+"your result  " + amountCorrect;
+
+}
+    </script>
+   </body>
+  </html>

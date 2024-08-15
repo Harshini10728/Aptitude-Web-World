@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="js quiz.css">
+    <title>JS Quiz</title>
+    <link rel="stylesheet" href="quiz.css"/>
+  </head>
+  <body>
+    <nav>
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="que.html">Quantative</a></li>
+          <li><a href="ver.html">Verbal</a></li>
+          <li><a href="rea.html">Reaoning</a></li>
+      </ul>
+  </nav>
+    <h1 id="main-h">Pronoun Usage</h1>
+    <h2 id="questions-h"></h2>
+    <p class="questions" id="question1">
+    
+      1- Gary's mom asked _______ to clean the garage</p>
+    <input type="radio" name="answer1" value="wrong">he
+    <input type="radio" name="answer1" value="correct">him
+    <input type="radio" name="answer1" value="wrong">his
+    <hr>
+
+    <p class="questions" id="question2">
+      2- Neither Mary nor _______ knew why the store was closed.</p>
+    <input type="radio" name="answer2" value="wrong">my
+    <input type="radio" name="answer2" value="wrong">me
+    <input type="radio" name="answer2" value="correct">i
+    <hr>
+
+    <p class="questions" id="question3">
+      3- After school, you and _______ must discuss a few things.</p>
+      <input type="radio" name="answer3" value="wrong">my
+      <input type="radio" name="answer3" value="wrong">me
+      <input type="radio" name="answer3" value="correct">i
+      <hr>
+    <p class="questions" id="question4">
+    
+      4- My nephew was crying and needed _______ diaper changed.</p>
+    <input type="radio" name="answer4" value="wrong">is
+    <input type="radio" name="answer4" value="correct">his
+    <input type="radio" name="answer4" value="wrong">this
+    <hr>
+
+    <p class="questions" id="question5">
+      5- Did she see _______?</p>
+    <input type="radio" name="answer5" value="wrong">is
+    <input type="radio" name="answer5" value="wrong">as
+    <input type="radio" name="answer5" value="correct">us
+     <hr>
+
+    <p class="questions" id="question6">
+      6- I took the bag from _______.</p>
+      <input type="radio" name="answer6" value="wrong">his
+      <input type="radio" name="answer6" value="wrong">he
+      <input type="radio" name="answer6" value="correct"> him
+      <hr>
+
+      <p class="questions" id="question7">
+        7- My brother and _______ went to the park.</p>
+        <input type="radio" name="answer7" value="wrong">me
+        <input type="radio" name="answer7" value="correct"> i
+        <input type="radio" name="answer7" value="wrong">my
+        <hr>
+
+        <p class="questions" id="question8">
+          8- What did _______ do about the car?</p>
+          <input type="radio" name="answer8" value="correct"> they 
+          <input type="radio" name="answer8" value="wrong">we
+          <input type="radio" name="answer8" value="wrong"> his
+          <hr>
+
+            <p class="questions" id="question9">
+              9- What did _______ say about the work?</p>
+              <input type="radio" name="answer9" value="wrong"> her
+              <input type="radio" name="answer9" value="wrong"> i
+              <input type="radio" name="answer9" value="correct">she 
+              <hr>
+
+              <p class="questions" id="question10">
+                10- Where will _______ go from here?</p>
+                <input type="radio" name="answer10" value="correct"> you
+                <input type="radio" name="answer10" value="wrong"> i
+                <input type="radio" name="answer10" value="wrong"> me
+                <hr>
+
+      <br>
+      <br>
+  
+      <button class="submit" onclick="return getResults();" type="submit">
+        submit</button>
+  
+    <h2 id="results-h">Get Result</h2>
+    <p id="results"></p>
+  
+    <script type="text/javascript">
+      function getResults() {
+
+var amountCorrect = 0;
+
+for(var i = 1; i <= 10; i++) {
+  var radiosName = document.getElementsByName('answer'+i);
+
+  for(var j = 0; j < radiosName.length; j++) {
+    var radiosValue = radiosName[j];
+    if(radiosValue.value == "correct" && radiosValue.checked) {
+      amountCorrect++;
+      radiosValue.style.color = "green";
+    }
+  }
+}
+document.getElementById('results').innerHTML =
+"your result  " + amountCorrect;
+
+}
+    </script>
+   </body>
+  </html>

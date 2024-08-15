@@ -1,0 +1,39 @@
+nav {
+    background-color: rgb(16, 23, 24);
+    height: 50px;
+    width: 1200px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    display: inline;
+    margin-right: 10px;
+    position: center;
+}
+a {
+    color: white;
+    text-decoration: none;
+    padding: 0 20px;
+    letter-spacing: 0.8px;
+    position: relative;
+
+}
+a:hover{
+    color: rgb(16, 200, 200);
+}
+button{
+    background-color:rgb(40, 130, 240);
+    color: black;
+    height: 30px;
+    width: 90px;
+}
+button:hover{
+    background-color: rgb(12, 53, 102);
+    color: antiquewhite;
+}

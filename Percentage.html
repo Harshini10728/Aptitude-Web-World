@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="js quiz.css">
+    <title>JS Quiz</title>
+    <link rel="stylesheet" href="quiz.css"/>
+  </head>
+  <body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="que.html">Quantative</a></li>
+            <li><a href="ver.html">Verbal</a></li>
+            <li><a href="rea.html">Reaoning</a></li>
+        </ul>
+    </nav>
+    <h1 id="main-h">Percentage</h1>
+    <h2 id="questions-h"></h2>
+    <p class="questions" id="question1">
+    1-A batsman scored 110 runs which included 3 boundaries and 8 sixes. What percent of his total score did he make by running between the wickets?  </p>
+    <input type="radio" name="answer1" value="wrong">45%
+    <input type="radio" name="answer1" value="correct">45 5/11%
+    <input type="radio" name="answer1" value="wrong">55%
+    <hr>
+    <p class="questions" id="question2">
+      2-Two students appeared at an examination. One of them secured 9 marks more than the other and his marks was 56% of the sum of their marks. The marks obtained by them are? </p>
+    <input type="radio" name="answer2" value="correct">42,33
+    <input type="radio" name="answer2" value="wrong">43,34
+    <input type="radio" name="answer2" value="wrong">41,32
+    <hr>
+   <p class="questions" id="question3">
+      3-A fruit seller had some apples. He sells 40% apples and still has 420 apples. Originally, he had?</p>
+      <input type="radio" name="answer3" value="wrong">600apples
+      <input type="radio" name="answer3" value="wrong">672apples
+      <input type="radio" name="answer3" value="correct">700apples
+      <hr>
+      <p class="questions" id="question4">
+      4-What percentage of numbers from 1 to 70 have 1 or 9 in the unit's digit?</p>
+      <input type="radio" name="answer4" value="correct">20
+      <input type="radio" name="answer4" value="wrong">14
+      <input type="radio" name="answer4" value="wrong">21
+      <hr>
+    <p class="questions" id="question5">
+      5-If A = x% of y and B = y% of x, then which of the following is true?</p>
+      <input type="radio" name="answer5" value="wrong">A is greater than B
+      <input type="radio" name="answer5" value="wrong">If x is smaller than y, then A is greater than B.
+      <input type="radio" name="answer5" value="correct">None of these
+      <hr>
+    <p class="questions" id="question6">
+      6-If 20% of a = b, then b% of 20 is the same as?</p>
+      <input type="radio" name="answer6" value="wrong">5% of a
+      <input type="radio" name="answer6" value="correct">4% of a
+      <input type="radio" name="answer6" value="wrong">None of these
+      <hr>
+    <p class="questions" id="question7">
+      7-Two numbers A and B are such that the sum of 5% of A and 4% of B is two-third of the sum of 6% of A and 8% of B. Find the ratio of A : B?</p>
+      <input type="radio" name="answer7" value="correct">4:3
+      <input type="radio" name="answer7" value="wrong">3:4
+      <input type="radio" name="answer7" value="wrong">2:3
+      <hr>
+    <p class="questions" id="question8">
+      8-
+      Two tailors X and Y are paid a total of Rs. 550 per week by their employer. If X is paid 120 percent of the sum paid to Y, how much is Y paid per week?</p>
+      <input type="radio" name="answer8" value="wrong">Rs.450
+      <input type="radio" name="answer8" value="wrong"> Rs.350
+      <input type="radio" name="answer8" value="correct">Rs.250
+      <hr>
+    <p class="questions" id="question9">
+      9-The population of a town increased from 1,75,000 to 2,62,500 in a decade. The average percent increase of population per year is?</p>
+      <input type="radio" name="answer9" value="correct">5%
+      <input type="radio" name="answer9" value="wrong">4.37%
+      <input type="radio" name="answer9" value="wrong">6%
+    <hr>
+    <p class="questions" id="question10">
+      10-John earns 33.33% more than Peter. By what percentage is Peter\'s earning less than that of John\'s?</p>
+      <input type="radio" name="answer10" value="wrong">23%
+      <input type="radio" name="answer10" value="wrong">22%
+      <input type="radio" name="answer10" value="correct">25%
+      <hr>
+     <br>
+     <br>
+     <button class="submit" onclick="return getResults();" type="submit">
+        submit</button>
+     <h2 id="results-h">Get Result</h2>
+    <p id="results"></p>
+   <script type="text/javascript">
+      function getResults() {
+  var amountCorrect = 0;
+for(var i = 1; i <= 10; i++) {
+  var radiosName = document.getElementsByName('answer'+i);
+
+  for(var j = 0; j < radiosName.length; j++) {
+    var radiosValue = radiosName[j];
+    if(radiosValue.value == "correct" && radiosValue.checked) {
+      amountCorrect++;
+      radiosValue.style.color = "green";
+    }
+  }
+}
+document.getElementById('results').innerHTML =
+"your result  " + amountCorrect;
+
+}
+    </script>
+   </body>
+  </html>

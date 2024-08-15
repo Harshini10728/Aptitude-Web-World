@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="js quiz.css">
+    <title>JS Quiz</title>
+    <link rel="stylesheet" href="quiz.css"/>
+  </head>
+  <body>
+    <nav>
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="que.html">Quantative</a></li>
+          <li><a href="ver.html">Verbal</a></li>
+          <li><a href="rea.html">Reaoning</a></li>
+      </ul>
+  </nav>
+    <h1 id="main-h">Number system</h1>
+    <h2 id="questions-h"></h2>
+    <p class="questions" id="question1">
+    
+      1- what is the sum of first 20 odd natural number</p>
+    <input type="radio" name="answer1" value="wrong">100
+    <input type="radio" name="answer1" value="correct">400
+    <input type="radio" name="answer1" value="wrong">600
+    <hr>
+
+    <p class="questions" id="question2">
+      2- the difference between the place values of 7 and 3 in the number 527435 is:</p>
+    <input type="radio" name="answer2" value="wrong">7340
+    <input type="radio" name="answer2" value="wrong">4550
+    <input type="radio" name="answer2" value="correct">6970
+    <hr>
+
+    <p class="questions" id="question3">
+      3- every rational number is also?</p>
+      <input type="radio" name="answer3" value="wrong">a whole number
+      <input type="radio" name="answer3" value="wrong">a natural number
+      <input type="radio" name="answer3" value="correct">a real number
+      <hr>
+    <p class="questions" id="question4">
+    
+      4- Which one of the following is not a prime number?</p>
+    <input type="radio" name="answer4" value="wrong">58
+    <input type="radio" name="answer4" value="correct">91
+    <input type="radio" name="answer4" value="wrong">72
+    <hr>
+
+    <p class="questions" id="question5">
+      5- (112 x 5^4) = ?</p>
+    <input type="radio" name="answer5" value="wrong">80000
+    <input type="radio" name="answer5" value="wrong">50000
+    <input type="radio" name="answer5" value="correct">70000
+    <hr>
+
+    <p class="questions" id="question6">
+      6- It is being given that (232 + 1) is completely divisible by a whole number. Which of the following numbers is completely divisible by this number?</p>
+      <input type="radio" name="answer6" value="wrong">(7*2^23)
+      <input type="radio" name="answer6" value="wrong">(2^16+1)
+      <input type="radio" name="answer6" value="correct">(2^96 + 1)
+
+      <hr>
+      <p class="questions" id="question7">
+        7- What number will replace A, if 3313A is divisible by 33?</p>
+        <input type="radio" name="answer7" value="wrong">3
+        <input type="radio" name="answer7" value="correct"> 2
+        <input type="radio" name="answer7" value="wrong"> 4
+        <hr>
+
+        <p class="questions" id="question8">
+          8- Find the least perfect square which is divisible by 15, 25 and 36.</p>
+          <input type="radio" name="answer8" value="correct"> 900
+          <input type="radio" name="answer8" value="wrong"> 600
+          <input type="radio" name="answer8" value="wrong"> 800
+          <hr>
+
+            <p class="questions" id="question9">
+              9- What digits should come in place of A and B if the number 1456A6B is divisible by both 5 and 8?</p>
+              <input type="radio" name="answer9" value="wrong">4 and 0
+              <input type="radio" name="answer9" value="wrong"> 2 and 0
+              <input type="radio" name="answer9" value="correct"> 3 and 0
+              <hr>
+
+              <p class="questions" id="question10">
+                10- What is the smallest number when increased by 7 is divisible by 9, 11 and 36?</p>
+                <input type="radio" name="answer10" value="correct"> 389
+                <input type="radio" name="answer10" value="wrong"> 342
+                <input type="radio" name="answer10" value="wrong"> 367
+                <hr>
+
+      <br>
+      <br>
+  
+      <br>
+      <br>
+  
+      <button class="submit" onclick="return getResults();" type="submit">
+        submit</button>
+  
+    <h2 id="results-h">Get Result</h2>
+    <p id="results"></p>
+  
+    <script type="text/javascript">
+      function getResults() {
+
+var amountCorrect = 0;
+
+for(var i = 1; i <= 10; i++) {
+  var radiosName = document.getElementsByName('answer'+i);
+
+  for(var j = 0; j < radiosName.length; j++) {
+    var radiosValue = radiosName[j];
+    if(radiosValue.value == "correct" && radiosValue.checked) {
+      amountCorrect++;
+      radiosValue.style.color = "green";
+    }
+  }
+}
+document.getElementById('results').innerHTML =
+"your result  " + amountCorrect;
+
+}
+    </script>
+   </body>
+  </html>

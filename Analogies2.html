@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="js quiz.css">
+    <title>JS Quiz</title>
+    <link rel="stylesheet" href="quiz.css"/>
+  </head>
+  <body>
+    <nav>
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="que.html">Quantative</a></li>
+          <li><a href="ver.html">Verbal</a></li>
+          <li><a href="rea.html">Reaoning</a></li>
+      </ul>
+  </nav>
+    <h1 id="main-h">Analogies</h1>
+    <h2 id="questions-h"></h2>
+    <p class="questions" id="question1">
+    
+      1- Elated is to despondent as enlightened is to</p>
+    <input type="radio" name="answer1" value="wrong">miserable
+    <input type="radio" name="answer1" value="correct">ignorant
+    <input type="radio" name="answer1" value="wrong">tolerant
+    <hr>
+
+    <p class="questions" id="question2">
+      2- Optimist is to cheerful as pessimist is to</p>
+    <input type="radio" name="answer2" value="wrong">mean
+    <input type="radio" name="answer2" value="wrong">helpful
+    <input type="radio" name="answer2" value="correct">gloomy
+    <hr>
+
+    <p class="questions" id="question3">
+      3- Reptile is to lizard as flower is to</p>
+      <input type="radio" name="answer3" value="wrong">petal
+      <input type="radio" name="answer3" value="wrong">stem
+      <input type="radio" name="answer3" value="correct">daisy
+      <hr>
+    <p class="questions" id="question4">
+    
+      4- Play is to actor as concert is to</p>
+    <input type="radio" name="answer4" value="wrong"> symphony
+    <input type="radio" name="answer4" value="correct">musician
+    <input type="radio" name="answer4" value="wrong"> percussion
+    <hr>
+
+    <p class="questions" id="question5">
+      5- Sponge is to porous as rubber is to</p>
+    <input type="radio" name="answer5" value="wrong">solid
+    <input type="radio" name="answer5" value="wrong"> massive
+    <input type="radio" name="answer5" value="correct">elastic
+    <hr>
+
+    <p class="questions" id="question6">
+      6- Careful is to cautious as boastful is to</p>
+      <input type="radio" name="answer6" value="wrong">humble
+      <input type="radio" name="answer6" value="wrong">joyful
+      <input type="radio" name="answer6" value="correct">arrogant
+      <hr>
+
+      <p class="questions" id="question7">
+        7- Odometer is to mileage as compass is to</p>
+        <input type="radio" name="answer7" value="wrong">needle
+        <input type="radio" name="answer7" value="correct">direction
+        <input type="radio" name="answer7" value="wrong">hiking
+        <hr>
+
+        <p class="questions" id="question8">
+          8- Marathon is to race as hibernation is to</p>
+          <input type="radio" name="answer8" value="correct">sleep
+          <input type="radio" name="answer8" value="wrong">bear
+          <input type="radio" name="answer8" value="wrong">dream
+          <hr>
+
+            <p class="questions" id="question9">
+              9- Window is to pane as book is to</p>
+              <input type="radio" name="answer9" value="wrong">glass
+              <input type="radio" name="answer9" value="wrong">cover
+              <input type="radio" name="answer9" value="correct">page
+             <hr>
+
+              <p class="questions" id="question10">
+                10- Cup is to coffee as bowl is to</p>
+                <input type="radio" name="answer10" value="correct">soup
+                <input type="radio" name="answer10" value="wrong">dish
+                <input type="radio" name="answer10" value="wrong">food
+                <hr>
+    
+      <br>
+      <br>
+  
+      <button class="submit" onclick="return getResults();" type="submit">
+        submit</button>
+  
+    <h2 id="results-h">Get Result</h2>
+    <p id="results"></p>
+  
+    <script type="text/javascript">
+      function getResults() {
+
+var amountCorrect = 0;
+
+for(var i = 1; i <= 10; i++) {
+  var radiosName = document.getElementsByName('answer'+i);
+
+  for(var j = 0; j < radiosName.length; j++) {
+    var radiosValue = radiosName[j];
+    if(radiosValue.value == "correct" && radiosValue.checked) {
+      amountCorrect++;
+      radiosValue.style.color = "green";
+    }
+  }
+}
+document.getElementById('results').innerHTML =
+"your result  " + amountCorrect;
+
+}
+    </script>
+   </body>
+  </html>
+  

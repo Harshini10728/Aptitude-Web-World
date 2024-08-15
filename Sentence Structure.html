@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="js quiz.css">
+    <title>JS Quiz</title>
+    <link rel="stylesheet" href="quiz.css"/>
+  </head>
+  <body>
+    <nav>
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="que.html">Quantative</a></li>
+          <li><a href="ver.html">Verbal</a></li>
+          <li><a href="rea.html">Reaoning</a></li>
+      </ul>
+  </nav>
+    <h1 id="main-h">Sentence Structure</h1>
+    <h2 id="questions-h"></h2>
+    <p class="questions" id="question1">
+    
+      1-  A simple sentence consists of</p>
+    <input type="radio" name="answer1" value="wrong">one independent thought
+    <input type="radio" name="answer1" value="correct">one independent clause
+    <input type="radio" name="answer1" value="wrong">one independent should
+    <hr>
+
+    <p class="questions" id="question2">
+      2- An independent clause contains</p>
+    <input type="radio" name="answer2" value="wrong">a subject and an noun
+    <input type="radio" name="answer2" value="wrong">a subject and an object
+    <input type="radio" name="answer2" value="correct">a subject and a verb
+    <hr>
+
+    <p class="questions" id="question3">
+      3- A compound sentence consists of</p>
+      <input type="radio" name="answer3" value="wrong">three or more independent clauses
+      <input type="radio" name="answer3" value="wrong">one or more independent clauses
+      <input type="radio" name="answer3" value="correct">two or more independent clauses
+      <hr>
+    <p class="questions" id="question4">
+    
+      4- Independent clauses can be joined by using</p>
+    <input type="radio" name="answer4" value="wrong">a subordinating conjunction
+    <input type="radio" name="answer4" value="correct">a coordinating conjunction
+    <input type="radio" name="answer4" value="wrong">a dependent conjunction
+    <hr>
+
+    <p class="questions" id="question5">
+      5- A complex sentence consists of an independent clause plus</p>
+    <input type="radio" name="answer5" value="wrong">a subordinating conjunction
+    <input type="radio" name="answer5" value="wrong">a conjunction clause
+    <input type="radio" name="answer5" value="correct">a dependent clause
+    <hr>
+
+    <p class="questions" id="question6">
+      6- A dependent clause can begin with a relative pronoun or a</p>
+      <input type="radio" name="answer6" value="wrong">a coordinating conjunction
+      <input type="radio" name="answer6" value="wrong">a dependent conjunction
+      <input type="radio" name="answer6" value="correct">a subordinating conjunction
+      <hr>
+
+      <p class="questions" id="question7">
+        7- Which is a compound sentence?</p>
+        <input type="radio" name="answer7" value="wrong"> I like walking on the beach with my dog.
+        <input type="radio" name="answer7" value="correct">  I like walking but my dog likes running.
+        <input type="radio" name="answer7" value="wrong"> I like walking on with my dog.
+        <hr>
+
+        <p class="questions" id="question8">
+          8- "I like him because he’s funny." Which is the dependent clause?</p>
+          <input type="radio" name="answer8" value="correct"> because he’s funny
+          <input type="radio" name="answer8" value="wrong"> become he’s funny
+          <input type="radio" name="answer8" value="wrong"> I like him
+          <hr>
+
+            <p class="questions" id="question9">
+              9- Which is a complex sentence?</p>
+              <input type="radio" name="answer9" value="wrong">We got up late so I missed my train.
+              <input type="radio" name="answer9" value="wrong"> one independent thought
+              <input type="radio" name="answer9" value="correct">  I was late because I missed my train.
+              <hr>
+
+              <p class="questions" id="question10">
+                10-  A compound-complex sentence consists of two or more independent clauses and</p>
+                <input type="radio" name="answer10" value="correct">one or more dependent clauses
+                <input type="radio" name="answer10" value="wrong"> two or more dependent clauses
+                <input type="radio" name="answer10" value="wrong"> three or more dependent clauses
+                <hr>
+
+      <br>
+      <br>
+  
+      <button class="submit" onclick="return getResults();" type="submit">
+        submit</button>
+  
+    <h2 id="results-h">Get Result</h2>
+    <p id="results"></p>
+  
+    <script type="text/javascript">
+      function getResults() {
+
+var amountCorrect = 0;
+
+for(var i = 1; i <= 10; i++) {
+  var radiosName = document.getElementsByName('answer'+i);
+
+  for(var j = 0; j < radiosName.length; j++) {
+    var radiosValue = radiosName[j];
+    if(radiosValue.value == "correct" && radiosValue.checked) {
+      amountCorrect++;
+      radiosValue.style.color = "green";
+    }
+  }
+}
+document.getElementById('results').innerHTML =
+"your result  " + amountCorrect;
+
+}
+    </script>
+   </body>
+  </html>

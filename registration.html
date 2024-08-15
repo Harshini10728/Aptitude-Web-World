@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact me</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      nav {
+              background-color: rgb(16, 23, 24);
+              height: 50px;
+              width: 1200px;
+              display: flex;
+              align-items: center;
+              gap: 10px;
+          }
+          ul {
+              list-style-type: none;
+              margin: 0;
+              padding: 0;
+          }
+          li {
+              display: inline;
+              margin-right: 10px;
+              position: center;
+          }
+          a {
+              color: white;
+              text-decoration: none;
+              padding: 0 20px;
+              letter-spacing: 0.8px;
+              position: relative;
+  
+          }
+          a:hover{
+              color: rgb(16, 200, 200);
+          }
+          
+  body{
+    font-family: Arial, sans-serif;
+            background-image: url(sunset.jpg);
+            background-size: cover;
+  }
+  h2 {
+    text-align: center;
+  }
+  
+  form {
+    margin-top: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+        input[type="password"],
+        input[type="submit"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+  button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+input[type="email"] {
+     width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  button {
+    padding: 10px 20px;
+    background-color: #14c938;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color:#277127;
+  }
+  .login-container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-right: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color:bisque;
+  }
+
+</style>
+<body>
+  <nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="que.html">Quantative</a></li>
+        <li><a href="ver.html">Verbal</a></li>
+        <li><a href="rea.html">Reaoning</a></li>
+    </ul>
+</nav>
+<div class="container">
+  <form action="registration.php" method="post">
+      <div class="login-container">
+          <h2 align="center">login Form</h2>
+          <div class="form-group">
+              <label>Full Name:</label>
+              <input type="text" id="fullname" name="fullname" required>
+          </div>
+          <div class="form-group">
+              <label>Register no:</label>
+              <input type="text" id="register" name="register" required>
+          </div>
+          <div class="form-group">
+              <label>Department:</label>
+              <input type="text" id="department" name="department" required>
+          </div>
+          <div class="form-group">
+              <label>Email:</label>
+              <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+              <label>Password:</label>
+              <input type="password" id="password" name="password" required>
+          </div>
+          <div class="form-group">
+              <label>Confirm Password:</label>
+              <input type="password" id="confirm_password" name="confirm_password" required>
+          </div>
+          <p>
+              <input type="checkbox" name="agree" required> I agree to submit my details
+          </p>
+          <button type="submit">Submit</button>
+      </div>
+  </form>
+</div>
+
+<script>
+  document.getElementById('registration-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const fullname = document.getElementById('fullname').value;
+      const register = document.getElementById('register').value;
+      const department = document.getElementById('department').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirm_password').value;
+      const agree = document.querySelector('input[name="agree"]').checked;
+
+      if (password !== confirmPassword) {
+          alert('Passwords do not match');
+          return;
+      }
+
+      if (!agree) {
+          alert('You must agree to submit your details');
+          return;
+      }
+
+      const userData = {
+          fullname: fullname,
+          register: register,
+          department: department,
+          email: email,
+          password: password
+      };
+      console.log('User Data:', userData);
+
+      // You can now send this data to your server or store it locally
+  });
+</script>
+</body>
+</html>
+

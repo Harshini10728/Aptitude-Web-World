@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="js quiz.css">
+    <title>JS Quiz</title>
+    <link rel="stylesheet" href="quiz.css"/>
+  </head>
+  <body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="que.html">Quantative</a></li>
+            <li><a href="ver.html">Verbal</a></li>
+            <li><a href="rea.html">Reaoning</a></li>
+        </ul>
+    </nav>
+    <h1 id="main-h">Average</h1>
+    <h2 id="questions-h"></h2>
+    <p class="questions" id="question1">
+    
+      1- find the average of the following set of number: 354, 281, 623, 518, 447, 702, 876.</p>
+    <input type="radio" name="answer1" value="wrong">561
+    <input type="radio" name="answer1" value="correct">543
+    <input type="radio" name="answer1" value="wrong">623
+    <hr>
+
+    <p class="questions" id="question2">
+      2- find the average of all prime number between 30 and 50</p>
+    <input type="radio" name="answer2" value="wrong">41
+    <input type="radio" name="answer2" value="wrong">47.8
+    <input type="radio" name="answer2" value="correct">39.8
+    <hr>
+
+    <p class="questions" id="question3">
+      3- find the average of first 40 natural number</p>
+      <input type="radio" name="answer3" value="wrong">23.5
+      <input type="radio" name="answer3" value="wrong">26.5
+      <input type="radio" name="answer3" value="correct">20.5
+      <hr>
+      <p class="questions" id="question4">
+    
+        4- In the first 10 overs of a cricket game, the run rate was only 3.2. What should be the run rate in the remaining 40 overs to reach the target of 282 runs?</p>
+      <input type="radio" name="answer4" value="wrong">6.75
+      <input type="radio" name="answer4" value="correct">6.25
+      <input type="radio" name="answer4" value="wrong">6.58
+      <hr>
+  
+      <p class="questions" id="question5">
+        5- A car owner buys petrol at Rs.7.50, Rs. 8 and Rs. 8.50 per litre for three successive years. What approximately is the average cost per litre of petrol if he spends Rs. 4000 each year?</p>
+      <input type="radio" name="answer5" value="wrong">Rs. 6.98
+      <input type="radio" name="answer5" value="wrong">Rs. 5.98
+      <input type="radio" name="answer5" value="correct">Rs. 7.98
+      <hr>
+  
+      <p class="questions" id="question6">
+        6- A grocer has a sale of Rs. 6435, Rs. 6927, Rs. 6855, Rs. 7230 and Rs. 6562 for 5 consecutive months. How much sale must he have in the sixth month so that he gets an average sale of Rs. 6500?</p>
+        <input type="radio" name="answer6" value="wrong">Rs. 5991
+        <input type="radio" name="answer6" value="wrong">Rs. 6001
+        <input type="radio" name="answer6" value="correct">Rs. 4991
+  
+        <hr>
+        <p class="questions" id="question7">
+          7- The average of 20 numbers is zero. Of them, at the most, how many may be greater than zero?</p>
+          <input type="radio" name="answer7" value="wrong">20
+          <input type="radio" name="answer7" value="correct">19
+          <input type="radio" name="answer7" value="wrong">29
+          <hr>
+  
+          <p class="questions" id="question8">
+            8- The average weight of 8 person's increases by 2.5 kg when a new person comes in place of one of them weighing 65 kg. What might be the weight of the new person?</p>
+            <input type="radio" name="answer8" value="correct">85 kg
+            <input type="radio" name="answer8" value="wrong">86 kg
+            <input type="radio" name="answer8" value="wrong">87 kg
+            <hr>
+  
+              <p class="questions" id="question9">
+                9- The captain of a cricket team of 11 members is 26 years old and the wicket keeper is 3 years older. If the ages of these two are excluded, the average age of the remaining players is one year less than the average age of the whole team. What is the average age of the team?</p>
+                <input type="radio" name="answer9" value="wrong">25 years
+                <input type="radio" name="answer9" value="wrong"> 28 years
+                <input type="radio" name="answer9" value="correct">23 years
+                <hr>
+  
+                <p class="questions" id="question10">
+                  10- The average monthly income of P and Q is Rs. 5050. The average monthly income of Q and R is Rs. 6250 and the average monthly income of P and R is Rs. 5200. The monthly income of P is:</p>
+                  <input type="radio" name="answer10" value="correct">4000
+                  <input type="radio" name="answer10" value="wrong">3500
+                  <input type="radio" name="answer10" value="wrong">2000
+                  <hr>
+      <br>
+      <br>
+  
+      <button class="submit" onclick="return getResults();" type="submit">
+        submit</button>
+  
+    <h2 id="results-h">Get Result</h2>
+    <p id="results"></p>
+  
+    <script type="text/javascript">
+      function getResults() {
+
+var amountCorrect = 0;
+
+for(var i = 1; i <= 10; i++) {
+  var radiosName = document.getElementsByName('answer'+i);
+
+  for(var j = 0; j < radiosName.length; j++) {
+    var radiosValue = radiosName[j];
+    if(radiosValue.value == "correct" && radiosValue.checked) {
+      amountCorrect++;
+      radiosValue.style.color = "green";
+    }
+  }
+}
+document.getElementById('results').innerHTML =
+"your result  " + amountCorrect;
+
+}
+    </script>
+   </body>
+  </html>

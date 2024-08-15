@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="js quiz.css">
+    <title>JS Quiz</title>
+    <link rel="stylesheet" href="quiz.css"/>
+  </head>
+  <body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="que.html">Quantative</a></li>
+            <li><a href="ver.html">Verbal</a></li>
+            <li><a href="rea.html">Reaoning</a></li>
+        </ul>
+    </nav>
+    <h1 id="main-h">Probability</h1>
+    <h2 id="questions-h"></h2>
+    <p class="questions" id="question1">
+    1-Tickets numbered 1 to 20 are mixed up and then a ticket is drawn at random. What is the probability that the ticket drawn has a number which is a multiple of 3 or 5?  </p>
+    <input type="radio" name="answer1" value="wrong">8/16
+    <input type="radio" name="answer1" value="correct">9/20
+    <input type="radio" name="answer1" value="wrong">1/2
+    <hr>
+    <p class="questions" id="question2">
+      2- A bag contains 2 red, 3 green and 2 blue balls. Two balls are drawn at random. What is the probability that none of the balls drawn is blue?</p>
+    <input type="radio" name="answer2" value="correct">10/21
+    <input type="radio" name="answer2" value="wrong">11/21
+    <input type="radio" name="answer2" value="wrong">7/2
+    <hr>
+   <p class="questions" id="question3">
+      3-In a box, there are 8 red, 7 blue and 6 green balls. One ball is picked up randomly. What is the probability that it is neither red nor green?</p>
+      <input type="radio" name="answer3" value="wrong">3/4
+      <input type="radio" name="answer3" value="wrong">7/19
+      <input type="radio" name="answer3" value="correct">1/3
+      <hr>
+      <p class="questions" id="question4">
+      4-What is the probability of getting a sum 9 from two throws of a dice?</p>
+      <input type="radio" name="answer4" value="correct">1/9
+      <input type="radio" name="answer4" value="wrong">1/8
+      <input type="radio" name="answer4" value="wrong">4/36
+      <hr>
+    <p class="questions" id="question5">
+      5-Three unbiased coins are tossed. What is the probability of getting at most two heads?</p>
+      <input type="radio" name="answer5" value="wrong">1/4
+      <input type="radio" name="answer5" value="wrong">3/8
+      <input type="radio" name="answer5" value="correct">7/8
+      <hr>
+    <p class="questions" id="question6">
+      6- Two dice are thrown simultaneously. What is the probability of getting two numbers whose product is even?</p>
+      <input type="radio" name="answer6" value="wrong">1/2
+      <input type="radio" name="answer6" value="correct">3/4
+      <input type="radio" name="answer6" value="wrong">3/8
+      <hr>
+    <p class="questions" id="question7">
+      7-In a class, there are 15 boys and 10 girls. Three students are selected at random. The probability that 1 girl and 2 boys are selected, is?</p>
+      <input type="radio" name="answer7" value="correct">21/46
+      <input type="radio" name="answer7" value="wrong">1/50
+      <input type="radio" name="answer7" value="wrong">3/25
+      <hr>
+    <p class="questions" id="question8">
+      8-
+      In a lottery, there are 10 prizes and 25 blanks. A lottery is drawn at random. What is the probability of getting a prize?</p>
+      <input type="radio" name="answer8" value="wrong">1/10
+      <input type="radio" name="answer8" value="wrong">2/15
+      <input type="radio" name="answer8" value="correct">2/7
+      <hr>
+    <p class="questions" id="question9">
+      9-
+      From a pack of 52 cards, two cards are drawn together at random. What is the probability of both the cards being kings?</p>
+      <input type="radio" name="answer9" value="correct">1/221
+      <input type="radio" name="answer9" value="wrong">3/35
+      <input type="radio" name="answer9" value="wrong">25/57
+      <hr>
+    <p class="questions" id="question10">
+      10-Two dice are tossed. The probability that the total score is a prime number is?</p>
+      <input type="radio" name="answer10" value="wrong">1/6
+      <input type="radio" name="answer10" value="wrong">7/9
+      <input type="radio" name="answer10" value="correct">5/12
+      <hr>
+     <br>
+     <br>
+     <button class="submit" onclick="return getResults();" type="submit">
+        submit</button>
+     <h2 id="results-h">Get Result</h2>
+    <p id="results"></p>
+   <script type="text/javascript">
+      function getResults() {
+  var amountCorrect = 0;
+for(var i = 1; i <= 10; i++) {
+  var radiosName = document.getElementsByName('answer'+i);
+
+  for(var j = 0; j < radiosName.length; j++) {
+    var radiosValue = radiosName[j];
+    if(radiosValue.value == "correct" && radiosValue.checked) {
+      amountCorrect++;
+      radiosValue.style.color = "green";
+    }
+  }
+}
+document.getElementById('results').innerHTML =
+"your result  " + amountCorrect;
+
+}
+    </script>
+   </body>
+  </html>

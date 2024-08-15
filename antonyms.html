@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="js quiz.css">
+    <title>JS Quiz</title>
+    <link rel="stylesheet" href="quiz.css"/>
+  </head>
+  <body>
+    <nav>
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="que.html">Quantative</a></li>
+          <li><a href="ver.html">Verbal</a></li>
+          <li><a href="rea.html">Reaoning</a></li>
+      </ul>
+  </nav>
+    <h1 id="main-h">Antonyms</h1>
+    <h2 id="questions-h"></h2>
+    <p class="questions" id="question1">
+    
+      1- Direction: In the following questions choose the word opposite in meaning to the given word.
+      CONSPICUOUS </p>
+    <input type="radio" name="answer1" value="wrong">definite
+    <input type="radio" name="answer1" value="correct">obscure
+    <input type="radio" name="answer1" value="wrong">blatant
+    <hr>
+
+    <p class="questions" id="question2">
+      2- DEFICIT </p>
+    <input type="radio" name="answer2" value="wrong">explicit
+    <input type="radio" name="answer2" value="wrong">superfluous
+    <input type="radio" name="answer2" value="correct">surplus
+    <hr>
+
+    <p class="questions" id="question3">
+      3- AMATEURISH</p>
+      <input type="radio" name="answer3" value="wrong">skilled
+      <input type="radio" name="answer3" value="wrong">seasoned
+      <input type="radio" name="answer3" value="correct">professional
+      <hr>
+    <p class="questions" id="question4">
+    
+      4- AMENABLE</p>
+    <input type="radio" name="answer4" value="wrong">inattentive
+    <input type="radio" name="answer4" value="correct">unwilling
+    <input type="radio" name="answer4" value="wrong">distrustful
+    <hr>
+
+    <p class="questions" id="question5">
+      5- Direction: In the following questions, out of the four alternatives, choose the word opposite in meaning of the given word as your answer. Q :  AUGMENT </p>
+    <input type="radio" name="answer5" value="wrong">defend
+    <input type="radio" name="answer5" value="wrong">supplement
+    <input type="radio" name="answer5" value="correct">decrease
+    <hr>
+
+    <p class="questions" id="question6">
+      6- ANTIQUATED</p>
+      <input type="radio" name="answer6" value="wrong">unique
+      <input type="radio" name="answer6" value="wrong">renovated
+      <input type="radio" name="answer6" value="correct">modern
+      <hr>
+
+      <p class="questions" id="question7">
+        7- MINOR</p>
+        <input type="radio" name="answer7" value="wrong">Tall
+        <input type="radio" name="answer7" value="correct">Major
+        <input type="radio" name="answer7" value="wrong">Big
+        <hr>
+
+        <p class="questions" id="question8">
+          8- REVEALED</p>
+          <input type="radio" name="answer8" value="correct">Concealed
+          <input type="radio" name="answer8" value="wrong">Ignored
+          <input type="radio" name="answer8" value="wrong">Overlooked
+          <hr>
+
+            <p class="questions" id="question9">
+              9- ESSENTIAL</p>
+              <input type="radio" name="answer9" value="wrong">Noughts
+              <input type="radio" name="answer9" value="wrong">Minors
+              <input type="radio" name="answer9" value="correct">Extra
+
+              <hr>
+
+              <p class="questions" id="question10">
+                10- HYPOCRITICAL</p>
+                <input type="radio" name="answer10" value="correct">Sincere
+                <input type="radio" name="answer10" value="wrong">Amiable
+                <input type="radio" name="answer10" value="wrong">Dependable
+                <hr>
+      <br>
+      <br>
+  
+      <button class="submit" onclick="return getResults();" type="submit">
+        submit</button>
+  
+    <h2 id="results-h">Get Result</h2>
+    <p id="results"></p>
+  
+    <script type="text/javascript">
+      function getResults() {
+
+var amountCorrect = 0;
+
+for(var i = 1; i <= 10; i++) {
+  var radiosName = document.getElementsByName('answer'+i);
+
+  for(var j = 0; j < radiosName.length; j++) {
+    var radiosValue = radiosName[j];
+    if(radiosValue.value == "correct" && radiosValue.checked) {
+      amountCorrect++;
+      radiosValue.style.color = "green";
+    }
+  }
+}
+document.getElementById('results').innerHTML =
+"your result  " + amountCorrect;
+
+}
+    </script>
+   </body>
+  </html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="js quiz.css">
+    <title>JS Quiz</title>
+    <link rel="stylesheet" href="quiz.css"/>
+  </head>
+  <body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="que.html">Quantative</a></li>
+            <li><a href="ver.html">Verbal</a></li>
+            <li><a href="rea.html">Reaoning</a></li>
+        </ul>
+    </nav>
+    <h1 id="main-h">Discount</h1>
+    <h2 id="questions-h"></h2>
+    <p class="questions" id="question1">
+    1-  A man purchased a cow for Rs. 3000 and sold it the same day for Rs. 3600, allowing the buyer a credit of 2 years. If the rate of interest be 10% per annum, then the man has a gain of?</p>
+    <input type="radio" name="answer1" value="wrong">7.5%
+    <input type="radio" name="answer1" value="correct">0%
+    <input type="radio" name="answer1" value="wrong">5%
+    <hr>
+    <p class="questions" id="question2">
+      2- The true discount on Rs. 2562 due 4 months hence is Rs. 122. The rate percent is?</p>
+    <input type="radio" name="answer2" value="correct">15%
+    <input type="radio" name="answer2" value="wrong">19%
+    <input type="radio" name="answer2" value="wrong">33%
+    <hr>
+   <p class="questions" id="question3">
+      3-
+      A trader owes a merchant Rs. 10,028 due 1 year hence. The trader wants to settle the account after 3 months. If the rate of interest 12% per annum, how much cash should he pay?</p>
+      <input type="radio" name="answer3" value="wrong">Rs. 9650
+      <input type="radio" name="answer3" value="wrong">Rs. 9600
+      <input type="radio" name="answer3" value="correct">Rs. 9200
+      <hr>
+      <p class="questions" id="question4">
+      4-Goods were bought for Rs. 600 and sold the same for Rs. 688.50 at a credit of 9 months and thus gaining 2% The rate of interest per annum is?</p>
+      <input type="radio" name="answer4" value="correct">16 2/3%
+      <input type="radio" name="answer4" value="wrong">15%
+      <input type="radio" name="answer4" value="wrong">13 2/3%
+      <hr>
+    <p class="questions" id="question5">
+      5- The true discount on a bill due 9 months hence at 16% per annum is Rs. 189. The amount of the bill is?</p>
+      <input type="radio" name="answer5" value="wrong">Rs.2268
+      <input type="radio" name="answer5" value="wrong">Rs.1386
+      <input type="radio" name="answer5" value="correct">Rs.1764
+      <hr>
+    <p class="questions" id="question6">
+      6- A man buys a watch for Rs. 1950 in cash and sells it for Rs. 2200 at a credit of 1 year. If the rate of interest is 10% per annum, the man?</p>
+      <input type="radio" name="answer6" value="wrong">loses Rs.30
+      <input type="radio" name="answer6" value="correct">gains Rs. 50
+      <input type="radio" name="answer6" value="wrong">gains Rs.55
+      <hr>
+    <p class="questions" id="question7">
+      7- The true discount on Rs. 1760 due after a certain time at 12% per annum is Rs. 160. The time after which it is due is?</p>
+      <input type="radio" name="answer7" value="correct">10months
+      <input type="radio" name="answer7" value="wrong">9months
+      <input type="radio" name="answer7" value="wrong">8months
+      <hr>
+    <p class="questions" id="question8">
+      8-The present worth of Rs. 2310 due 2 years hence, the rate of interest being 15% per annum, is?</p>
+      <input type="radio" name="answer8" value="wrong">Rs.1840
+      <input type="radio" name="answer8" value="wrong">Rs.1443.75
+      <input type="radio" name="answer8" value="correct">Rs.1680
+      <hr>
+    <p class="questions" id="question9">
+      9-Raj got a new chair for 35% discount. Had Raj got no discount, Raj would have had to pay Rs. 224 more. How much did Raj pay for the chair?</p>
+      <input type="radio" name="answer9" value="correct">Rs.416
+      <input type="radio" name="answer9" value="wrong">Rs.500
+      <input type="radio" name="answer9" value="wrong">Rs.428
+      <hr>
+    <p class="questions" id="question10">
+      10-Gurpreet went to a shop and bought a sofa. She got a 20% discount on it. Had she gotten 25% discount she would have saved Rs. 1000 more. How much did she pay for the sofa?</p>
+      <input type="radio" name="answer10" value="wrong">Rs. 25,000
+      <input type="radio" name="answer10" value="wrong">Rs. 10,000
+      <input type="radio" name="answer10" value="correct">Rs. 20,000
+      <hr>
+     <br>
+     <br>
+     <button class="submit" onclick="return getResults();" type="submit">
+        submit</button>
+     <h2 id="results-h">Get Result</h2>
+    <p id="results"></p>
+   <script type="text/javascript">
+      function getResults() {
+  var amountCorrect = 0;
+for(var i = 1; i <= 10; i++) {
+  var radiosName = document.getElementsByName('answer'+i);
+
+  for(var j = 0; j < radiosName.length; j++) {
+    var radiosValue = radiosName[j];
+    if(radiosValue.value == "correct" && radiosValue.checked) {
+      amountCorrect++;
+      radiosValue.style.color = "green";
+    }
+  }
+}
+document.getElementById('results').innerHTML =
+"your result  " + amountCorrect;
+
+}
+    </script>
+   </body>
+  </html>

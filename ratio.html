@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="js quiz.css">
+    <title>JS Quiz</title>
+    <link rel="stylesheet" href="quiz.css"/>
+  </head>
+  <body>
+    <nav>
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="que.html">Quantative</a></li>
+          <li><a href="ver.html">Verbal</a></li>
+          <li><a href="rea.html">Reaoning</a></li>
+      </ul>
+  </nav>
+    <h1 id="main-h">Ratio And Proposition</h1>
+    <h2 id="questions-h"></h2>
+    <p class="questions" id="question1">
+    
+      1- A and B together have Rs. 1210. If  of A's amount is equal to  of B's amount, how much amount does B have?</p>
+    <input type="radio" name="answer1" value="wrong">Rs. 460
+    <input type="radio" name="answer1" value="correct">Rs. 484
+    <input type="radio" name="answer1" value="wrong">Rs. 664
+    <hr>
+
+    <p class="questions" id="question2">
+      2- Two numbers are respectively 20% and 50% more than a third number. The ratio of the two numbers is:</p>
+    <input type="radio" name="answer2" value="wrong">7 : 3
+    <input type="radio" name="answer2" value="wrong">3 : 5
+    <input type="radio" name="answer2" value="correct">4 : 5
+    <hr>
+
+    <p class="questions" id="question3">
+      3- A sum of money is to be distributed among A, B, C, D in the proportion of 5 : 2 : 4 : 3. If C gets Rs. 1000 more than D, what is B's share?</p>
+      <input type="radio" name="answer3" value="wrong">Rs. 1500
+      <input type="radio" name="answer3" value="wrong">Rs. 500
+      <input type="radio" name="answer3" value="correct">Rs. 1500
+      <hr>
+    <p class="questions" id="question4">
+    
+      4- A and B together have Rs. 1210. If  of A's amount is equal to  of B's amount, how much amount does B have?</p>
+    <input type="radio" name="answer4" value="wrong">Rs. 460
+    <input type="radio" name="answer4" value="correct">Rs. 484
+    <input type="radio" name="answer4" value="wrong">Rs. 664
+    <hr>
+
+    <p class="questions" id="question5">
+      5- Two numbers are respectively 20% and 50% more than a third number. The ratio of the two numbers is:</p>
+    <input type="radio" name="answer5" value="wrong">7 : 3
+    <input type="radio" name="answer5" value="wrong">3 : 5
+    <input type="radio" name="answer5" value="correct">4 : 5
+    <hr>
+
+    <p class="questions" id="question6">
+      6- A sum of money is to be distributed among A, B, C, D in the proportion of 5 : 2 : 4 : 3. If C gets Rs. 1000 more than D, what is B's share?</p>
+      <input type="radio" name="answer6" value="wrong">Rs. 1500
+      <input type="radio" name="answer6" value="wrong">Rs. 500
+      <input type="radio" name="answer6" value="correct">Rs. 1500
+      <hr>
+      
+      <br>
+      <br>
+  
+      <button class="submit" onclick="return getResults();" type="submit">
+        submit</button>
+  
+    <h2 id="results-h">Get Result</h2>
+    <p id="results"></p>
+  
+    <script type="text/javascript">
+      function getResults() {
+
+var amountCorrect = 0;
+
+for(var i = 1; i <= 10; i++) {
+  var radiosName = document.getElementsByName('answer'+i);
+
+  for(var j = 0; j < radiosName.length; j++) {
+    var radiosValue = radiosName[j];
+    if(radiosValue.value == "correct" && radiosValue.checked) {
+      amountCorrect++;
+      radiosValue.style.color = "green";
+    }
+  }
+}
+document.getElementById('results').innerHTML =
+"your result  " + amountCorrect;
+
+}
+    </script>
+   </body>
+  </html>
